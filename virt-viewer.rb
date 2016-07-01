@@ -15,16 +15,16 @@ class VirtViewer < Formula
   depends_on "shared-mime-info"
   depends_on "spice-gtk"
   depends_on "spice-protocol"
+  depends_on "gettext"
   depends_on :x11
   # TODO: audio
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system "sudo python setup.py install ", "--prefix=/usr",
                           "--disable-silent-rules",
                           "--disable-update-mimedb",
                           "--with-gtk=3.0",
                           "--prefix=#{prefix}"
-    system "make", "install"
   end
 
   def post_install
