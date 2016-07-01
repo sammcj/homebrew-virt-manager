@@ -20,11 +20,7 @@ class VirtViewer < Formula
   # TODO: audio
 
   def install
-    system "sudo python setup.py install ", "--prefix=/usr",
-                          "--disable-silent-rules",
-                          "--disable-update-mimedb",
-                          "--with-gtk=3.0",
-                          "--prefix=#{prefix}"
+    system "sudo python setup.py install ", "--prefix=/usr"
   end
 
   def post_install
